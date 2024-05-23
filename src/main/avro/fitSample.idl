@@ -1,0 +1,15 @@
+@namespace("org.agd.fitfile.avro")
+protocol FitSampleProtocol {
+  record FitSample {
+    long power;
+    double distance;
+    double speed;
+    double position_lat;
+    double position_long;
+    double altitude;
+    long cadence;
+    double grade;
+    long heartRate;
+    timestamp_ms timestamp;
+  }
+}
