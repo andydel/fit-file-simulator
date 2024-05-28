@@ -7,10 +7,8 @@ import org.agd.entity.FieldDefinition;
 import org.agd.fitfile.avro.FitSample;
 
 import java.util.*;
-import java.util.stream.Collectors;
 import java.time.Instant;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 public class FitFileRunner {
     public static void main(String[] args) {
@@ -33,14 +31,9 @@ public class FitFileRunner {
             });
         });
 
-//        AtomicBoolean firstTime = new AtomicBoolean(true);
         fitFile.getAllMessages("record").forEach(message -> {
-//            if (firstTime.get()) {
-//
             System.out.println("== Record == " + message.getNumberOfRecords());
 
-
-// Assuming message is an instance of a class that has the getFieldDefinitions method
             final Map<String, FieldDefinition> fieldMap = new HashMap<>();
             message.getFieldDefintions().forEach(fm -> {
                 fieldMap.put(fm.definition.fieldName, new FieldDefinition(fm.definition.fieldName, fm.size, fm.byteArrayPosition, fm.definition.scale, fm.definition.offset));
@@ -91,8 +84,6 @@ public class FitFileRunner {
                     fitSample.setPositionLong((double)getLong(record, fieldMap.get("position_long"), true) / 11930465.0);
                 }
 
-                //System.out.println(String.format("Timestamp: %s, %s", timestamp, fitSample));
-                //System.out.println("==============================");
                 kafkaPublisher.publishMessage(fitSample);
             });
 

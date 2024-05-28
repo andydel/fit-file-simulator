@@ -1,4 +1,5 @@
 /Users/andy/IdeaProjects/fit-file-simulator/src/main/java/org/agd/entity/FieldDefinition.java
 /Users/andy/IdeaProjects/fit-file-simulator/src/main/java/org/agd/fitfile/avro/FitSample.java
 /Users/andy/IdeaProjects/fit-file-simulator/src/main/java/org/agd/FitFileRunner.java
+/Users/andy/IdeaProjects/fit-file-simulator/src/main/java/org/agd/KafkaPublisher.java
 /Users/andy/IdeaProjects/fit-file-simulator/src/main/java/org/agd/fitfile/avro/FitSampleProtocol.java
